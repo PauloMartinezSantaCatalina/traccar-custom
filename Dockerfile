@@ -72,6 +72,9 @@ COPY traccar-web/src/resources/l10n/ ./web/l10n/
 # CONFIGURACIÓN PARA RENDER FREE TIER
 # ============================================================
 
+# Crear directorio de configuración
+RUN mkdir -p /opt/traccar/conf
+
 # Crear traccar.xml mínimo
 # CONFIG_USE_ENVIRONMENT_VARIABLES=true permite que Traccar lea
 # las variables de entorno CONFIG_* (ej: CONFIG_DATABASE_URL -> database.url)
