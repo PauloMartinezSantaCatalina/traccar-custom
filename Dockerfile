@@ -32,7 +32,7 @@ WORKDIR /build
 COPY traccar-web/package.json traccar-web/package-lock.json ./
 
 # Instalar dependencias
-RUN npm ci
+RUN npm install
 
 # Copiar código fuente del frontend
 COPY traccar-web/src/ ./src/
