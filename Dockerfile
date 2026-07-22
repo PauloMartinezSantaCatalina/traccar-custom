@@ -93,9 +93,5 @@ RUN mkdir -p /opt/traccar/data /opt/traccar/logs
 # Puerto de Traccar
 EXPOSE 8082
 
-# Health check para Render
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-  CMD curl -f http://localhost:8082/ || exit 1
-
 # Comando de inicio
 ENTRYPOINT ["java", "-XX:+ExitOnOutOfMemoryError", "-jar", "tracker-server.jar", "conf/traccar.xml"]
