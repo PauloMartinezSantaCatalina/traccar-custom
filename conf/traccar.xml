@@ -7,7 +7,7 @@
   <entry key='database.driver'>org.postgresql.Driver</entry>
   <entry key='database.url'>jdbc:postgresql://dpg-d9flaj3rjlhs73aio9eg-a/traccar_izua</entry>
   <entry key='database.user'>traccar</entry>
-  <entry key='database.password'>qFwZQuNdB2DK3yLiZVVk7gybqojNjiw</entry>
+  <entry key='database.password'>qFfwZQuNdB2DK3yL1ZVVk7gybqojNjiw</entry>
 
   <!-- Web -->
   <entry key='web.port'>8082</entry>
