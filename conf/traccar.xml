@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
+<properties>
+  <entry key='config.useEnvironmentVariables'>true</entry>
+  <entry key='web.port'>8082</entry>
+  <entry key='web.sessionTimeout'>604800</entry>
+  <entry key='registration.enable'>false</entry>
+  <entry key='logger.enable'>true</entry>
+  <entry key='logger.level'>info</entry>
+</properties>

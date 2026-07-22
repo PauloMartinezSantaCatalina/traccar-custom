@@ -75,21 +75,8 @@ COPY traccar-web/src/resources/l10n/ ./web/l10n/
 # Crear directorio de configuración
 RUN mkdir -p /opt/traccar/conf
 
-# Crear traccar.xml mínimo con heredoc
-# CONFIG_USE_ENVIRONMENT_VARIABLES=true permite que Traccar lea
-# las variables de entorno CONFIG_* (ej: CONFIG_DATABASE_URL -> database.url)
-RUN cat > /opt/traccar/conf/traccar.xml << 'EOF'
-<?xml version='1.0' encoding='UTF-8'?>
-<!DOCTYPE properties SYSTEM 'http://java.sun.com/dtd/properties.dtd'>
-<properties>
-  <entry key='config.useEnvironmentVariables'>true</entry>
-  <entry key='web.port'>8082</entry>
-  <entry key='web.sessionTimeout'>604800</entry>
-  <entry key='registration.enable'>false</entry>
-  <entry key='logger.enable'>true</entry>
-  <entry key='logger.level'>info</entry>
-</properties>
-EOF
+# Copiar traccar.xml precreado (evita problemas de encoding con echo/cat)
+COPY conf/traccar.xml /opt/traccar/conf/traccar.xml
 
 # Crear directorios necesarios
 RUN mkdir -p /opt/traccar/data /opt/traccar/logs
