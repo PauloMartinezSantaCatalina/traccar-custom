@@ -84,5 +84,11 @@ RUN mkdir -p /opt/traccar/data /opt/traccar/logs
 # Puerto de Traccar
 EXPOSE 8082
 
-# Comando de inicio
-ENTRYPOINT ["java", "-XX:+ExitOnOutOfMemoryError", "-jar", "tracker-server.jar", "conf/traccar.xml"]
+# Comando de inicio - JVM optimizada para arranque rapido en Render Free Tier
+ENTRYPOINT ["java", \
+    "-XX:+TieredCompilation", \
+    "-XX:TieredStopAtLevel=1", \
+    "-Xms64m", \
+    "-Xmx128m", \
+    "-XX:+ExitOnOutOfMemoryError", \
+    "-jar", "tracker-server.jar", "conf/traccar.xml"]
