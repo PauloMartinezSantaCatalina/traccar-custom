@@ -55,8 +55,8 @@ RUN apk add --no-cache bash tzdata curl
 WORKDIR /opt/traccar
 
 # Copiar backend compilado desde Stage 1
-COPY --from=backend-builder /build/build/libs/tracker-server.jar ./
-COPY --from=backend-builder /build/build/libs/lib/ ./lib/
+COPY --from=backend-builder /build/target/tracker-server.jar ./
+COPY --from=backend-builder /build/target/lib/ ./lib/
 
 # Copiar frontend compilado desde Stage 2
 COPY --from=frontend-builder /build/build/ ./web/
