@@ -11,12 +11,12 @@ FROM eclipse-temurin:21-jdk AS backend-builder
 WORKDIR /build
 
 # Copiar archivos de build primero (mejora cache de capas)
-COPY traccar/build.gradle traccar/settings.gradle traccar/gradlew ./
-COPY traccar/gradle/ ./gradle/
+COPY build.gradle settings.gradle gradlew ./
+COPY gradle/ ./gradle/
 
 # Copiar código fuente del backend
-COPY traccar/src/ ./src/
-COPY traccar/schema/ ./schema/
+COPY src/ ./src/
+COPY schema/ ./schema/
 
 # Dar permisos y compilar (sin tests para velocidad)
 RUN chmod +x gradlew && ./gradlew assemble --no-daemon -x test
@@ -62,11 +62,11 @@ COPY --from=backend-builder /build/build/libs/lib/ ./lib/
 COPY --from=frontend-builder /build/build/ ./web/
 
 # Copiar archivos de configuración y esquemas
-COPY traccar/schema/ ./schema/
-COPY traccar/templates/ ./templates/
+COPY schema/ ./schema/
+COPY templates/ ./templates/
 
 # Copiar traducciones del frontend
-COPY traccar-web/src/l10n/ ./web/l10n/
+COPY traccar-web/src/resources/l10n/ ./web/l10n/
 
 # ============================================================
 # CONFIGURACIÓN PARA RENDER FREE TIER
