@@ -1,0 +1,46 @@
+# ============================================================
+# DOCKERIGNORE - Excluir archivos innecesarios del build
+# ============================================================
+
+# Git
+.git
+.gitignore
+.gitmodules
+.github
+
+# Apps móviles (no se necesitan para el servidor)
+traccar-client/
+traccar-manager/
+
+# Documentación
+*.md
+LICENSE.txt
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Build artifacts anteriores
+traccar/build/
+traccar-web/node_modules/
+traccar-web/dist/
+traccar-web/simple/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Docker
+docker/
+Dockerfile*
+docker-compose*
+
+# Configuración local (no necesaria para build)
+debug.xml
+openapi.yaml
+setup/
+tools/
