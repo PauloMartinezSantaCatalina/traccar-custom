@@ -9,6 +9,9 @@
   <entry key='database.user'>traccar</entry>
   <entry key='database.password'>qFfwZQuNdB2DK3yL1ZVVk7gybqojNjiw</entry>
 
+  <!-- Disable all GPS protocol servers - only keep HTTP on 8082 -->
+  <entry key='protocols.enable'></entry>
+
   <!-- Web -->
   <entry key='web.port'>8082</entry>
   <entry key='web.sessionTimeout'>604800</entry>
