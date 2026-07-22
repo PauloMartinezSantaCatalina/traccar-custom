@@ -87,8 +87,8 @@ RUN echo '<?xml version="1.0" encoding="UTF-8"?>' > /opt/traccar/conf/traccar.xm
     echo '  <entry key="registration.enable">false</entry>' >> /opt/traccar/conf/traccar.xml && \
     echo '</properties>' >> /opt/traccar/conf/traccar.xml
 
-# Crear directorio de datos
-RUN mkdir -p /opt/traccar/data
+# Crear directorios necesarios
+RUN mkdir -p /opt/traccar/data /opt/traccar/logs
 
 # Puerto de Traccar
 EXPOSE 8082
