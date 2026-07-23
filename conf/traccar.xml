@@ -9,8 +9,8 @@
   <entry key='database.user'>traccar</entry>
   <entry key='database.password'>qFfwZQuNdB2DK3yL1ZVVk7gybqojNjiw</entry>
 
-  <!-- Disable all GPS protocol servers - only keep HTTP on 8082 -->
-  <entry key='protocols.enable'></entry>
+  <!-- Enable only OsmAnd protocol for Traccar Client app -->
+  <entry key='protocols.enable'>osmand</entry>
 
   <!-- Web -->
   <entry key='web.port'>8082</entry>
